@@ -1764,7 +1764,7 @@ def get(endpoint, params={}, force=False):
         )
 
     # Make the request
-    r = requests.get(url)
+    r = requests.get(url, timeout=5)
     if r.status_code not in [200, 201]:
         r.raise_for_status()
     else:
